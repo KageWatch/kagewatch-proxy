@@ -55,7 +55,7 @@ def m3u8_proxy(url: str, referer: str = ""):
                 else:
                     # 🔴 FIX 2: Proxy the actual video chunk (.ts) lines
                     abs_url = urljoin(url, line)
-                    proxy_link = proxy_link = f"/proxy?url={quote(abs_url)}&referer={quote(referer)}"
+                    proxy_link = f"https://kagewatch-proxy.onrender.com/proxy?url={quote(abs_url)}&referer={quote(referer)}"
                     new_content += proxy_link + "\n"
                     
             return Response(content=new_content, media_type="application/vnd.apple.mpegurl")
